@@ -53,7 +53,7 @@ app.get('/api/dashboard', requireAuth, async (req, res, next) => {
        FROM books b
        LEFT JOIN (
          SELECT book_id, COUNT(*) AS active_count
-         FROM reservations WHERE status IN ('active', 'fulfilled')
+         FROM reservations WHERE status ='active'
          GROUP BY book_id
        ) r ON r.book_id = b.id`,
     )

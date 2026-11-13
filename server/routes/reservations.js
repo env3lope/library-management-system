@@ -82,7 +82,7 @@ router.post('/', async (req, res, next) => {
     }
 
     const [[count]] = await connection.execute(
-      "SELECT COUNT(*) AS reservedCount FROM reservations WHERE book_id = ? AND status IN ('active', 'fulfilled')",
+      "SELECT COUNT(*) AS reservedCount FROM reservations WHERE book_id = ? AND status = 'active'",
       [bookId],
     )
 

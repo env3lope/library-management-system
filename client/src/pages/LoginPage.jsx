@@ -54,7 +54,7 @@ function LoginPage() {
             </span>
             <span className="flex flex-col gap-1">
               <strong className="font-display text-brand tracking-tight">
-                Лібро
+                Лібра
               </strong>
               <small className="text-label text-text-subtle">
                 Керування бібліотекою

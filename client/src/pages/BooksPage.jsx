@@ -85,6 +85,7 @@ function BooksPage() {
                 <th>Видавництво</th>
                 <th>Жанр</th>
                 <th>Доступно</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>

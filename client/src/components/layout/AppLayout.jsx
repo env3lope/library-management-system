@@ -37,7 +37,7 @@ function AppLayout() {
           </span>
           <span className="flex min-w-0 flex-col gap-1 max-md:hidden">
             <strong className="font-display text-brand tracking-tight">
-              Лібро
+              Лібра
             </strong>
             <small className="text-label text-text-subtle">
               Керування бібліотекою
@@ -53,6 +53,7 @@ function AppLayout() {
             .map((item) => (
               <NavLink
                 key={item.to}
+                aria-label={item.label}
                 className={({ isActive }) =>
                   `flex min-h-11 items-center gap-3 rounded-lg px-3 text-ui text-nav-text transition-colors hover:bg-surface-hover hover:text-primary-hover max-md:justify-center max-md:gap-0 max-md:px-0 ${
                     isActive
@@ -61,11 +62,12 @@ function AppLayout() {
                   }`
                 }
                 to={item.to}
+                title={item.label}
               >
-                <span className="grid w-5 place-items-center text-lg max-md:text-lg">
+                <span aria-hidden="true" className="grid w-5 shrink-0 place-items-center text-lg">
                   {item.icon}
                 </span>
-                {item.label}
+                <span className="max-md:hidden">{item.label}</span>
               </NavLink>
             ))}
         </nav>

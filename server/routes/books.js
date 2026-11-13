@@ -113,7 +113,7 @@ router.get('/', async (req, res, next) => {
        FROM books b
        LEFT JOIN (
          SELECT book_id, COUNT(*) AS active_count
-         FROM reservations WHERE status IN ('active', 'fulfilled')
+         FROM reservations WHERE status = 'active'
          GROUP BY book_id
        ) reserved ON reserved.book_id = b.id
        LEFT JOIN (
@@ -190,7 +190,7 @@ router.put('/:id', canManage, async (req, res, next) => {
     }
 
     const [[count]] = await connection.execute(
-      "SELECT COUNT(*) AS reservedCount FROM reservations WHERE book_id = ? AND status IN ('active', 'fulfilled')",
+      "SELECT COUNT(*) AS reservedCount FROM reservations WHERE book_id = ? AND status = 'active'",
       [id],
     )
     if (book.totalCopies < Number(count.reservedCount)) {

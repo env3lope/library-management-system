@@ -67,6 +67,7 @@ function ReadersPage() {
                 <th>Електронна пошта</th>
                 <th>Телефон</th>
                 <th>Резервування</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>

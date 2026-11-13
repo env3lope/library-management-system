@@ -37,25 +37,6 @@ function DashboardPage() {
 
   return (
     <div className="grid gap-page-gap">
-      <section className="relative min-h-56 overflow-hidden rounded-2xl bg-hero-surface px-10 py-8 max-md:min-h-60 max-md:px-6 max-md:py-6 compact:min-h-58 compact:px-5">
-        <div className="relative">
-          <span className="text-micro font-bold tracking-wide text-primary-muted">
-            ВАША БІБЛІОТЕКА СЬОГОДНІ
-          </span>
-          <h2 className="my-3 mb-2 max-w-md font-display text-page-heading leading-tight font-medium tracking-tight text-hero-heading max-md:max-w-card-copy max-md:text-2xl compact:max-w-card-copy-compact compact:text-2xl">
-            Кожна книжка знайде свого читача.
-          </h2>
-          <p className="mb-5 text-xs text-hero-copy compact:text-label">
-            Переглядайте каталог і стежте за резервуваннями в одному місці.
-          </p>
-          <Link
-            className="inline-flex min-h-9 items-center justify-center gap-inline rounded-lg border border-transparent bg-white px-4 text-xs font-semibold text-primary-hover transition hover:-translate-y-px hover:bg-surface-link-hover"
-            to="/books"
-          >
-            Відкрити каталог <span>→</span>
-          </Link>
-        </div>
-      </section>
       {error && <Message kind="error">{error}</Message>}
       <section className="grid grid-cols-4 gap-form-gap max-lg:grid-cols-2 max-md:gap-inline">
         {cards.map((card) => (
